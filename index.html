@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Gastos Personales</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Gestión de Gastos Personales</h1>
+  </header>
+
+  <main>
+    <section class="balance-section">
+      <h2>Balance</h2>
+      <form id="balance-form">
+        <label for="initial-money">Dinero inicial:</label>
+        <input type="number" id="initial-money" placeholder="Cantidad inicial" required>
+
+        <label for="income">Ingreso:</label>
+        <input type="number" id="income" placeholder="Ingreso">
+
+        <label for="deposit">Depósito:</label>
+        <input type="number" id="deposit" placeholder="Depósito">
+
+        <button type="button" id="update-balance">Actualizar Balance</button>
+      </form>
+      <div id="balance-display">
+        <p>Dinero inicial: $<span id="initial-display">0</span></p>
+        <p>Total actual: $<span id="current-display">0</span></p>
+      </div>
+    </section>
+
+    <section class="savings-section">
+      <h2>Plan de Ahorro</h2>
+      <form id="savings-form">
+        <label for="savings-percentage">Porcentaje de ahorro (%):</label>
+        <input type="number" id="savings-percentage" placeholder="Porcentaje de ahorro" required>
+
+        <button type="button" id="update-savings">Calcular Ahorro</button>
+      </form>
+      <div id="savings-display">
+        <p>Total ahorrado: $<span id="savings-total">0</span></p>
+      </div>
+    </section>
+
+    <section class="expenses-section">
+      <h2>Registrar Gasto</h2>
+      <form id="expense-form">
+        <label for="expense-date">Fecha:</label>
+        <input type="date" id="expense-date" required>
+
+        <label for="expense-description">Descripción:</label>
+        <input type="text" id="expense-description" placeholder="¿En qué gastaste?" required>
+
+        <label for="expense-amount">Cantidad:</label>
+        <input type="number" id="expense-amount" placeholder="Cantidad" required>
+
+        <button type="button" id="add-expense">Agregar Gasto</button>
+      </form>
+
+      <!-- Contenedor scrollable para la tabla -->
+      <div id="expense-table-container">
+        <table id="expense-table">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Descripción</th>
+              <th>Cantidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Las filas de gastos se agregarán aquí dinámicamente -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <button id="download-pdf">Descargar PDF</button>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Gestión de Gastos Personales</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
