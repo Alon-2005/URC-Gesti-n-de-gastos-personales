@@ -72,16 +72,6 @@ th {
   background-color: #f2f2f2;
 }
 
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #4CAF50;
-  color: white;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
 /* Estilos generales para tablas */
 table {
   width: 100%;
